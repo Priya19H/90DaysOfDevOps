@@ -12,7 +12,7 @@
 5.	How will you stay consistent every single day?
     I will commit to a 90-day challenge, working every day to stay consistent.
 
-# Plan for next 90 days:
+# Plan for next 90 days: 
 1.	Background
     •  1.8 years of Linux experience.
     •  Fresher in DevOps.
