@@ -28,5 +28,5 @@
     •	Maintain consistency in study
     •	Achieve a well-paying DevOps job
 
-4.	Alocate a weekly time budget
+4.	Allocate a weekly time budget
     •	1–1.5 hours per day.
