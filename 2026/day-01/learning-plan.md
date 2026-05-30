@@ -14,9 +14,9 @@
 
 # Plan for next 90 days:
 1.	Background
-    • 1.8 years of Linux experience.
-    •	Fresher in DevOps.
-    •	Currently on a career break, aiming to learn advanced technologies to make a strong comeback in the IT industry.
+    •  1.8 years of Linux experience.
+    •  Fresher in DevOps.
+    •  Currently on a career break, aiming to learn advanced technologies to make a strong comeback in the IT industry.
 
 2.	Core DevOps skills you want to build
     •	Linux troubleshooting
@@ -28,5 +28,5 @@
     •	Maintain consistency in study
     •	Achieve a well-paying DevOps job
 
-	Allocate a weekly time budget
-•	1–1.5 hours per day.
+4.	Alocate a weekly time budget
+    •	1–1.5 hours per day.
