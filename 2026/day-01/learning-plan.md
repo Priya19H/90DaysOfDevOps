@@ -1,4 +1,3 @@
-
 # Foundation for your DevOps journey
 
 1.	What is your understanding of DevOps and Cloud Engineering?
