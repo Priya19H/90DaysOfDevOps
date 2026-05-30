@@ -1,15 +1,15 @@
 # Foundation for your DevOps journey
 
 1.	What is your understanding of DevOps and Cloud Engineering?
-    DevOps is not just a tool; it is a culture and a methodology. It bridges the gap between the development team and the operations team to enable faster and more efficient work. Cloud engineering is the practice of building, running, and securing computer systems that operate over the internet.
+   DevOps is not just a tool; it is a culture and a methodology. It bridges the gap between the development team and the operations team to enable faster and more efficient work. Cloud engineering is the practice of building, running, and securing computer systems that operate over the internet.
 
-2.	Why are you starting to learn DevOps & Cloud?
+3.	Why are you starting to learn DevOps & Cloud?
     I am currently on a career break and need to catch up with new technologies to make a strong comeback in the IT industry.
 
-3.	Where do you want to reach?
+4.	Where do you want to reach?
     I want to secure a well-paying job in the DevOps field.
 
-4.	How will you stay consistent every single day?
+5.	How will you stay consistent every single day?
     I will commit to a 90-day challenge, working every day to stay consistent.
 
 # Plan for next 90 days:
