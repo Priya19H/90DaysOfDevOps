@@ -6,7 +6,7 @@ Today's goal is to **practice user and group management** by completing hands-on
 
 Figure out how to:
 - Create users and set passwords
-- Create groups and assign users
+- Create groups and assign users  
 - Set up shared directories with group permissions
 
 Use what you learned from Days 1-7 to find the right commands!
@@ -29,7 +29,12 @@ Create three users with home directories and passwords:
 - `berlin`
 - `professor`
 
+ <img width="388" height="246" alt="image" src="https://github.com/user-attachments/assets/f8d96f72-a9a9-4a89-92cf-fd4e40026b1e" />
+
+
 **Verify:** Check `/etc/passwd` and `/home/` directory
+ 
+  <img width="398" height="260" alt="image" src="https://github.com/user-attachments/assets/f4422815-8497-4187-9b60-103db1c9f99c" />
 
 ---
 
@@ -41,6 +46,8 @@ Create two groups:
 
 **Verify:** Check `/etc/group`
 
+<img width="403" height="254" alt="image" src="https://github.com/user-attachments/assets/9bacc2c4-4348-4ac6-bbc9-3502c6080fb6" />
+
 ---
 
 ### Task 3: Assign to Groups (15 minutes)
@@ -51,6 +58,8 @@ Assign users:
 - `professor` → `admins`
 
 **Verify:** Use appropriate command to check group membership
+
+<img width="395" height="257" alt="image" src="https://github.com/user-attachments/assets/862040c7-eabe-40cb-8382-0861c253dde4" />
 
 ---
 
