@@ -32,8 +32,29 @@ Add to `person.yaml`:
 - `tools` — a list of 5 DevOps tools you know or are learning
 - `hobbies` — a list using the inline format `[item1, item2]`
 
-Write in your notes: What are the two ways to write a list in YAML?
+<img width="395" height="169" alt="image" src="https://github.com/user-attachments/assets/fba32cf0-4daf-4b77-ba76-f1f4059cf26b" />    
 
+
+
+_Write in your notes: What are the two ways to write a list in YAML?_
+In YAML, there are two common ways to write a list:
+
+1. Block Style (most common)
+   Each item starts with a hyphen (-).
+```
+tools:
+  - Git
+  - Docker
+  - Kubernetes
+  - Jenkins
+  - Terraform
+```
+
+2. Inline (Flow) Style
+   All items are written inside square brackets ([]), separated by commas.
+```
+tools: [Git, Docker, Kubernetes, Jenkins, Terraform]
+```
 ---
 
 ### Task 3: Nested Objects
