@@ -127,12 +127,14 @@ _When would you use `|` vs `>`?_
    - Documentation text
    - Messages where line breaks are not important
 
-__Rule of thumb:__
-Commands/scripts → use |
+_Rule of thumb:_         
+Commands/scripts → use |        
 Human-readable paragraphs → use >
+
+
 ---
 
-### Task 5: Validate Your YAML
+### Task 5: Validate Your YAML (Pending)
 1. Install `yamllint` or use an online validator
 2. Validate both your YAML files
 3. Intentionally break the indentation — what error do you get?
@@ -158,6 +160,7 @@ tools:
 - docker
   - kubernetes
 ```
+_Difference: In the first code block, the indentation is correct, whereas in the second code block, the indentation is incorrect._ 
 
 ---
 
@@ -171,9 +174,9 @@ tools:
 ---
 
 ## Documentation
-Create `day-38-yaml.md` with:
 - Your YAML files
 - What you learned (3 key points)
+- 
 
 ---
 
