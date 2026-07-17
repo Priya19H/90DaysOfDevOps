@@ -74,7 +74,7 @@ In `server.yaml`, add a `startup_script` field using:
 ```
 server:
   name: web-server
-  ip: 192.168.1.10
+  ip: 192.168.210.10
   port: 8080
 
 startup_script: |
@@ -97,7 +97,7 @@ echo "Server started"
 ```
 server:
   name: web-server
-  ip: 192.168.1.10
+  ip: 192.168.210.10
   port: 8080
 
 startup_script: >
