@@ -161,7 +161,7 @@ Include at least 3 stages. Hand-drawn and photographed is perfectly fine.
 
 ---
 
-### Task 5: Explore in the Wild
+### Task 5: Explore in the Wild (Pending)
 1. Open any popular open-source repo on GitHub (Kubernetes, React, FastAPI — pick one you know)
 2. Find their `.github/workflows/` folder
 3. Open one workflow YAML file
