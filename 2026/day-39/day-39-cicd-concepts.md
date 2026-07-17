@@ -57,13 +57,12 @@ A realistic range is around **1–3 manual deployments per day** if the team fol
 Frequent manual deployments increase the chance of human mistakes. Using automated testing, Continuous Integration (CI), and Continuous Deployment (CD) allows teams to deploy more often with lower risk.
 
 
-
-
-
 ---
-### Task 2: CI vs CD
 
-# Continuous Integration (CI)
+
+### Task 2: CI vs CD
+-----------
+## Continuous Integration (CI)
 
 Continuous Integration is the practice of developers frequently merging their code changes into a shared repository.  
 Each change is automatically built and tested to catch bugs, integration issues, and code errors early.
@@ -103,18 +102,58 @@ An online service automatically deploys website updates several times a day afte
 
 ---
 
-### Task 3: Pipeline Anatomy
-A pipeline has these parts — write what each one does:
-- **Trigger** — what starts the pipeline
-- **Stage** — a logical phase (build, test, deploy)
-- **Job** — a unit of work inside a stage
-- **Step** — a single command or action inside a job
-- **Runner** — the machine that executes the job
-- **Artifact** — output produced by a job
+### Task 3: Pipeline Anatomy   
+
+A pipeline has these parts :
+--------------
+1. Trigger : 
+   - A trigger is the event that starts a CI/CD pipeline.  
+   - It can be a code push, pull request, scheduled time, or manual action.
+
+**Example:** A developer pushes code to the repository, which automatically starts the pipeline.
 
 ---
 
-### Task 4: Draw a Pipeline
+2. Stage :
+   - A stage is a logical phase of the pipeline that groups related activities together.  
+   - Common stages include build, test, and deploy.
+
+**Example:** A pipeline may have a Build stage followed by a Test stage and a Deploy stage.
+
+---
+
+3. Job :
+   - A job is a unit of work inside a stage that performs specific tasks.  
+   - Jobs contain one or more steps and can sometimes run in parallel.
+
+**Example:** A Test stage may contain separate jobs for running frontend tests and backend tests.
+
+---
+
+4. Step :
+   - A step is a single command or action performed inside a job.  
+   - Steps are executed in order to complete the job.
+
+**Example:** Installing dependencies, running a test command, or creating a build file are individual steps.
+
+---
+
+5. Runner :
+   - A runner is the machine or environment that executes pipeline jobs.  
+   - It provides the operating system, tools, and resources needed to run the steps.
+
+**Example:** A GitHub Actions runner using Ubuntu executes a build and test job.
+
+---
+
+6. Artifact :
+   - An artifact is the output produced by a job that can be stored, shared, or used by later stages.  
+   - Artifacts can include compiled code, packages, reports, or deployment files.
+
+**Example:** A build job creates a Docker image or application package that is later deployed to production.
+---
+
+### Task 4: Draw a Pipeline (Pending)
 Draw a CI/CD pipeline for this scenario:
 > A developer pushes code to GitHub. The app is tested, built into a Docker image, and deployed to a staging server.
 
