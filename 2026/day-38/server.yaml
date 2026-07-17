@@ -1,0 +1,17 @@
+server:
+  name: web-server
+  ip: 192.168.210.10
+  port: 8080
+
+database:
+  host: localhost
+  name: db-app
+  credentials:
+    user: admin
+    password: 123
+
+startup_script: |                          # Instead of | use > 
+  #!/bin/bash
+  echo "Starting server"
+  systemctl start nginx
+  echo "Server started"
