@@ -62,17 +62,74 @@ Create `server.yaml` that describes a server:
 - `server` with nested keys: `name`, `ip`, `port`
 - `database` with nested keys: `host`, `name`, `credentials` (nested further: `user`, `password`)
 
-**Verify:** Try adding a tab instead of spaces — what happens when you validate it?
+<img width="303" height="151" alt="image" src="https://github.com/user-attachments/assets/574ed8e7-a799-4e8a-8637-2fadf540a8ad" />
 
+**Verify:** Try adding a tab instead of spaces — what happens when you validate it?
+_(Pending)_
 ---
 
 ### Task 4: Multi-line Strings
 In `server.yaml`, add a `startup_script` field using:
 1. The `|` block style (preserves newlines)
+```
+server:
+  name: web-server
+  ip: 192.168.1.10
+  port: 8080
+
+startup_script: |
+  #!/bin/bash
+  echo "Starting server"
+  systemctl start nginx
+  echo "Server started"
+```
+
+Output value keeps the line breaks:
+
+```
+#!/bin/bash
+echo "Starting server"
+systemctl start nginx
+echo "Server started"
+```
 2. The `>` fold style (folds into one line)
 
-Write in your notes: When would you use `|` vs `>`?
+```
+server:
+  name: web-server
+  ip: 192.168.1.10
+  port: 8080
 
+startup_script: >
+  #!/bin/bash
+  echo "Starting server"
+  systemctl start nginx
+  echo "Server started"
+```
+Output value becomes:
+```
+#!/bin/bash echo "Starting server" systemctl start nginx echo "Server started"
+```
+
+
+_When would you use `|` vs `>`?_
+
+* Use | (literal block style) when you need to preserve line breaks.
+   Examples:
+   - Shell scripts
+   - Configuration files
+   - SQL queries
+   - Log messages
+
+* Use > (folded block style) when you want multiple lines in YAML to become a single paragraph/line.
+   Examples:
+   - Long descriptions
+   - Documentation text
+   - Messages where line breaks are not important
+
+__Rule of thumb:__
+Commands/scripts → use |
+Human-readable paragraphs → use >
 ---
 
 ### Task 5: Validate Your YAML
