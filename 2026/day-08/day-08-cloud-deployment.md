@@ -132,7 +132,3 @@ This exercise teaches you:
 These are core skills for any DevOps engineer working in production.
 
 ---
-
-
-Happy Learning
-**TrainWithShubham**
