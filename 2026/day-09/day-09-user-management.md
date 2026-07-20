@@ -63,11 +63,28 @@ Assign users:
 ### Task 4: Shared Directory (20 minutes)
 
 1. Create directory: `/opt/dev-project`
+   ```
+   sudo mkdir -p /opt/dev-project
+   ```  
 2. Set group owner to `developers`
+   ```
+   sudo chgrp developers /opt/dev-project
+   ```  
 3. Set permissions to `775` (rwxrwxr-x)
-4. Test by creating files as `tokyo` and `berlin`
+   ```
+   sudo chmod 775 /opt/dev-project
+   ```
+6. Test by creating files as `tokyo` and `berlin`
+   ```
+   sudo usermod -aG developers tokyo
+   sudo usermod -aG developers berlin
+   ```
 
 **Verify:** Check permissions and test file creation
+```
+# ls -l /opt/dev-project
+# sudo -u tokyo touch /opt/dev-project/tokyo_test.txt
+# sudo -u berlin touch /opt/dev-project/berlin_test.txt
 
 ---
 
