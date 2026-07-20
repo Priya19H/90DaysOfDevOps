@@ -100,6 +100,16 @@ Create your `day-08-cloud-deployment.md` with this structure:
 
 ## Commands Used
 [List the key commands you used]
+```
+sudo apt-get update
+sudo apt-get install nginx -y
+sudo systemctl status nginx
+netstat -tunlp | grep 80
+sudo ufw status
+sudo ufw allow 80,443/tcp
+
+```
+
 
 ## Challenges Faced
 [Describe any issues and how you solved them]
