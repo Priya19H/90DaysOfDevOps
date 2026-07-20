@@ -112,11 +112,24 @@ sudo ufw allow 80,443/tcp
 
 
 ## Challenges Faced
-[Describe any issues and how you solved them]
+- I successfully installed Nginx, but the default web page was not displayed.
+- To troubleshoot, I first verified whether the service was enabled using the systemctl command, and confirmed  that it was active.
+- Next, I checked if the required ports were listening; ports 80 and 443 were not open.
+- I enabled them using the ufw firewall command.
+- After updating the firewall rules, I accessed the Nginx web page again, and it loaded successfully.
+
 
 ## What I Learned
-[3-5 bullet points of key learnings]
+**1. Service verification:** Always confirm that the Nginx service is running and enabled using systemctl. Even if installed correctly, the service must be active to serve content.
 
+**2. Port accessibility:** Web servers rely on ports 80 (HTTP) and 443 (HTTPS). If these are not open, the server cannot respond to client requests.
+
+**3. Firewall configuration:** Firewalls like UFW can block traffic even when the service is running. Opening the correct ports is essential for external access.
+
+**4. Systematic troubleshooting:** By checking service status, then ports, then firewall rules, you applied a logical sequence that quickly isolated the issue.
+
+**5. Validation after changes:** Testing the Nginx page after each fix ensures that the problem is resolved and confirms the effectiveness of your actions.
+   
 ---
 
 
