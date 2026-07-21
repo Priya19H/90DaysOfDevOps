@@ -29,7 +29,7 @@ Create three users with home directories and passwords:
 - `berlin`
 - `professor`
 ```
-# useradd username
+# sudo useradd -m username
 # passwd username
 # cat /etc/passwd
 ```
