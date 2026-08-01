@@ -45,17 +45,17 @@ Follow these rules while creating your practice note:
   `echo "This is line 3." >> notes.txt`                
 
   
-- Use **`cat`** to read the full file                            
-  `cat notes.txt`                       
+- Use **`cat`** to read the full file                                       
+  `cat notes.txt`                         
 - Use **`head`** and **`tail`** to read parts of the file                                       
 
-  ` # head -2 notes.txt
-    This is line 1.
-    This is line 2.
+  ` # head -2 notes.txt 
+    This is line 1.              
+    This is line 2.  
   `
-  ` # tail -2 notes.txt
-    This is line 2.
-    This is line 3.                                 
+  ` # tail -2 notes.txt                 
+    This is line 2.                
+    This is line 3.                                        
     `                    
 - Use **`tee`** once to write and display at the same time
 - Keep it short (8–12 lines total in the file)
