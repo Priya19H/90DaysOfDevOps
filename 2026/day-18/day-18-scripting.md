@@ -25,7 +25,7 @@ You will:
    - A function `add` that takes two numbers and prints their sum
    - Call both functions from the script
 
-```
+```bash
 #!/bin/bash
 
 # Function to greet a user
@@ -54,7 +54,7 @@ add 10 20
    - A function `check_memory` that checks free memory using `free -h`
    - A main section that calls both and prints the results
 
-```
+```bash
 #!/bin/bash
 # A function `check_disk` that checks disk usage of `/`
 check_disk(){
