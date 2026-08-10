@@ -1,12 +1,12 @@
 
 Capture quick health snapshot.
 
-## environment basics
+## Environment basics
 **uname -a  or lsb_release -a**
 
 <img width="1211" height="48" alt="image" src="https://github.com/user-attachments/assets/8142e3b2-e8b5-4491-b872-8016e52b892a" />
 
-## cpu memory
+## CPU Memory
 
 **top**
 <img width="1263" height="568" alt="image" src="https://github.com/user-attachments/assets/6324bdaa-8c35-4c4a-80f2-aec3af4c2599" />
@@ -40,7 +40,7 @@ Capture quick health snapshot.
 _________________________________________________________________________________________________________________________________________
 
 
-# runbook on specific target service.(nginx)
+# Runbook on specific target service.(nginx)
 
 ## systemctl status nginx
 **in output I observed that the service is inactive for the last 10 mins.**
