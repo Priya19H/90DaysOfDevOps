@@ -97,7 +97,7 @@ echo "$memory_result"
 
 echo "1. Script started"
 
-echo "$P"
+ls /does-not-exist
 
 echo "2. Script is still running"
 
@@ -107,7 +107,7 @@ echo "3. Script finished"
 `Output`
 ```
 1. Script started
-
+ls: cannot access '/does-not-exist': No such file or directory
 2. Script is still running
 3. Script finished
 ```
@@ -118,7 +118,7 @@ echo "3. Script finished"
 set -e
 echo "1. Script started"
 
-echo "$P"
+ls /does-not-exist
 
 echo "2. Script is still running"
 
