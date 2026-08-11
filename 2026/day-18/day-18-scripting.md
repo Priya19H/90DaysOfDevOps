@@ -88,9 +88,69 @@ echo "$memory_result"
 3. Try a command that **fails** — what happens with `set -e`?
 4. Try a **piped command** where one part fails — what happens with `set -o pipefail`?
 
-**Document:** What does each flag do?                              
-2. `set -u` →
-` Without set -u `
+**Document:** What does each flag do?
+
+### `2. set -e` →
+- ` Without set -e `
+```bash
+#!/bin/bash
+
+echo "1. Script started"
+
+echo "$P"
+
+echo "2. Script is still running"
+
+echo "3. Script finished"
+```
+
+`Output`
+```
+1. Script started
+
+2. Script is still running
+3. Script finished
+```
+
+- ` With set -e `
+```bash
+#!/bin/bash
+set -e
+echo "1. Script started"
+
+echo "$P"
+
+echo "2. Script is still running"
+
+echo "3. Script finished"
+```
+
+`Output`
+```
+1. Script started
+ls: cannot access '/does-not-exist': No such file or directory
+
+```
+
+
+
+
+
+
+------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+### `2. set -u` →
+- ` Without set -u `
 ```bash
 #!/bin/bash
 
@@ -113,7 +173,7 @@ ls: cannot access '/does-not-exist': No such file or directory
 
 ```
 
-` With set -u `
+- ` With set -u `
 ```bash
 #!/bin/bash
 set -u
