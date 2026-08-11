@@ -343,6 +343,101 @@ Create `system_info.sh` that uses functions for everything:
 
 Output should look clean and readable.
 
+```bash
+#!/bin/bash
+set -euo pipefail
+#A function to print hostname and OS info
+host_OS_info()
+{
+	echo "------- Hostname Information---------"
+	hostname
+	echo
+	echo "------- OS Information----------"
+	hostnamectl | awk 'NR>=6 PRINT'
+
+}
+
+#A function to print uptime
+uptime_info()
+{
+	echo "----------System Uptime----------"
+	uptime
+}
+
+#A function to print disk usage (top 5 by size)
+disk_usage()
+{
+	echo "------------Disk Usage------------"
+	du -h . 2>/dev/null | sort -hr | head -5 
+}
+
+#A function to print memory usage
+mem_usage()
+{
+	echo "------------Memory Usage------------"
+	free -m
+}
+
+
+#A function to print top 5 CPU-consuming processes
+process()
+{
+	echo "----------Top 5 CPU-COnsuming Processes----------"
+	top -b -n 1 | awk 'NR>=7 {print}' | head -6
+}
+
+host_OS_info
+echo ""
+uptime_info
+echo ""
+disk_usage
+echo ""
+mem_usage
+echo " "
+process
+
+```
+`Output`
+```
+------- Hostname Information---------
+nic-workstation
+
+------- OS Information----------
+  Operating System: Fedora Linux 42 (Xfce)
+       CPE OS Name: cpe:/o:fedoraproject:fedora:42
+    OS Support End: Wed 2026-05-27
+OS Support Expired: 2month 2w 1d
+
+----------System Uptime----------
+ 17:31:22 up 6 days,  1:36,  5 users,  load average: 0.85, 0.67, 0.63
+
+------------Disk Usage------------
+176K	.
+148K	./.git
+68K	./.git/hooks
+24K	./.git/objects
+16K	./.git/logs
+
+------------Memory Usage------------
+               total        used        free      shared  buff/cache   available
+Mem:            5796        4809         491          71         826         987
+Swap:           5795        1995        3800
+ 
+----------Top 5 CPU-COnsuming Processes----------
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  83008 piyu      20   0  235336   5480   3364 R  20.0   0.1   0:00.07 top
+   7391 nic       20   0 1448.4g 262612 103028 S   6.7   4.4  25:03.77 chrome
+      1 root      20   0   38856  12400   7840 S   0.0   0.2   0:16.35 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.14 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_wo+
+
+```
+
+
+
+
+
+
 ---
 
 ## Hints
