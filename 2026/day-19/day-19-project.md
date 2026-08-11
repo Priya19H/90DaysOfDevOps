@@ -1,5 +1,5 @@
 
-# Day 19 – Shell Scripting Project: Log Rotation, Backup & Crontab
+# Day 19 – Shell Scripting Project: Log Rotation, Backup & Crontab (PENDING)
 
 ## Task
 Apply everything from Days 16–18 in real-world mini projects.
