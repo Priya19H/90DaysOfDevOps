@@ -178,7 +178,79 @@ echo "3. Script finished"
 ```
 ------------------------------------
 
-- `set -o pipefail` →
+### `3. set -o pipefail` →
+- ` Without pipefail `
+```bash
+#!/bin/bash
+
+echo "1. Script started"
+
+false | echo "Hello"
+
+echo "Pipeline exit status = $?"
+
+echo "2. Script continued"
+```
+
+`Output`
+```
+1. Script started
+Hello
+Pipeline exit status = 0
+2. Script continued
+```
+
+```
+false  |  echo "Hello"
+  ❌              ✅
+                ↑
+          Last command
+                ↓
+             SUCCESS
+```
+
+
+
+- ` With pipefail `
+```bash
+#!/bin/bash
+
+set -o pipefail
+
+echo "1. Script started"
+
+false | echo "Hello"
+
+echo "Pipeline exit status = $?"
+
+echo "2. Script continued"
+```
+
+`Output`
+```
+1. Script started
+Hello
+Pipeline exit status = 1
+2. Script continued
+```
+```
+false  |  echo "Hello"
+  ❌              ✅
+  │
+  └──────────────┐
+                 ↓
+             pipefail
+                 ↓
+              FAILURE
+```
+
+------------------------------------
+
+
+
+
+
+
 
 ---
 ```
