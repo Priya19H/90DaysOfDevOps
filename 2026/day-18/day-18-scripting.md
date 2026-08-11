@@ -258,13 +258,18 @@ Use, set -euo pipefail to make Bash scripts safer and fail early instead of sile
 pipefail    If something fails inside a pipeline → NOTICE IT 🚨
 ```
 
-
+---
 
 ### Task 4: Local Variables
 1. Create `local_demo.sh` with:
    - A function that uses `local` keyword for variables
    - Show that `local` variables don't leak outside the function
    - Compare with a function that uses regular variables
+
+
+
+
+
 
 ---
 
