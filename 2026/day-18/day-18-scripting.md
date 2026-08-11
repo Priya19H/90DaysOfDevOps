@@ -132,22 +132,7 @@ ls: cannot access '/does-not-exist': No such file or directory
 
 ```
 
-
-
-
-
-
 ------------------------------------
-
-
-
-
-
-
-
-
-
-
 
 ### `2. set -u` →
 - ` Without set -u `
@@ -156,7 +141,7 @@ ls: cannot access '/does-not-exist': No such file or directory
 
 echo "1. Script started"
 
-ls /does-not-exist
+echo "$P"
 
 echo "2. Script is still running"
 
@@ -166,7 +151,6 @@ echo "3. Script finished"
 `Output`
 ```
 1. Script started
-ls: cannot access '/does-not-exist': No such file or directory
 
 2. Script is still running
 3. Script finished
@@ -179,7 +163,7 @@ ls: cannot access '/does-not-exist': No such file or directory
 set -u
 echo "1. Script started"
 
-ls /does-not-exist
+echo "$P"
 
 echo "2. Script is still running"
 
@@ -189,18 +173,11 @@ echo "3. Script finished"
 `Output`
 ```
 1. Script started
-ls: cannot access '/does-not-exist': No such file or directory
 ./demo.sh: line 7: P: unbound variable
 
 ```
-
-
-
-
-
-
 ------------------------------------
-- `set -u` →
+
 - `set -o pipefail` →
 
 ---
