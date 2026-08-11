@@ -1,322 +1,139 @@
+# Bash Basics & Conditionals — Cheat Sheet
 
-# Bash Scripting Basics — Cheat Sheet
+## Task 1: Basics
 
-## 1. Shebang — `#!/bin/bash`
-
-The **shebang** tells Linux which interpreter should be used to execute the script.
+### 1. Shebang
 
 ```bash
 #!/bin/bash
 ```
+
+Tells Linux to run the script using **Bash**.
 
 Example:
 
 ```bash
 #!/bin/bash
-
-echo "Hello Linux"
+echo "Hello World"
 ```
-
-Make it executable:
-
-```bash
-chmod +x script.sh
-./script.sh
-```
-
-### Why does it matter?
-
-Without the shebang, the system may not know which shell/interpreter should execute the script when using:
-
-```bash
-./script.sh
-```
-
-The shebang makes the intended interpreter explicit.
 
 ---
 
-# 2. Running a Bash Script
+### 2. Running a Script
 
-There are two common ways to run a script.
-
-## Method 1 — Execute directly
-
-First give execute permission:
+Give execute permission:
 
 ```bash
 chmod +x script.sh
+```
+
+Run directly:
+
+```bash
+./script.sh
+```
+
+Or run using Bash without execute permission:
+
+```bash
+bash script.sh
+```
+
+**Difference:**
+
+```text
+./script.sh   → needs execute permission + uses shebang
+bash script.sh → Bash directly runs the script
+```
+
+---
+
+### 3. Comments
+
+Single-line comment:
+
+```bash
+# This is a comment
+echo "Hello"
+```
+
+Inline comment:
+
+```bash
+echo "Hello"  # Print greeting
+```
+
+Comments are ignored by Bash.
+
+---
+
+### 4. Variables
+
+Declare:
+
+```bash
+name="Rahul"
+age=30
+```
+
+Use:
+
+```bash
+echo $name
+echo $age
+```
+
+#### Quoting
+
+```bash
+echo $name
+echo "$name"
+echo '$name'
+```
+
+If:
+
+```bash
+name="Rahul Kumar"
 ```
 
 Then:
 
 ```bash
-./script.sh
+echo $name
 ```
 
-The `./` means:
+May be split into multiple words.
 
-> Run `script.sh` from the current directory.
+```bash
+echo "$name"
+```
+
+Preserves the value as one string.
+
+```bash
+echo '$name'
+```
+
+Prints literally:
+
+```text
+$name
+```
+
+**Rule:** Prefer `"$VAR"` when using variables.
 
 ---
 
-## Method 2 — Run using Bash
+### 5. Reading User Input
 
 ```bash
-bash script.sh
-```
+read -p "Enter your name: " name
 
-In this case, the script does **not need execute permission**.
+echo "Hello $name"
+```
 
 Example:
-
-```bash
-ls -l script.sh
-```
-
-Even without execute permission:
-
-```bash
-bash script.sh
-```
-
-can run the script.
-
-### Quick comparison
-
-| Command          | Execute permission required? |
-| ---------------- | ---------------------------- |
-| `./script.sh`    | Yes                          |
-| `bash script.sh` | No                           |
-
----
-
-# 3. Comments
-
-Comments are ignored by Bash.
-
-## Single-line comment
-
-Use `#`:
-
-```bash
-# This is a comment
-
-echo "Hello"
-```
-
-Everything after `#` on that line is treated as a comment.
-
----
-
-## Inline comment
-
-A comment can also appear after a command:
-
-```bash
-echo "Hello"    # Print greeting
-```
-
-Another example:
-
-```bash
-NAME="Rahul"    # Store user's name
-```
-
-### Important
-
-Don't put `#` inside quotes expecting it to be a comment:
-
-```bash
-echo "# This is NOT a comment"
-```
-
-Output:
-
-```text
-# This is NOT a comment
-```
-
----
-
-# 4. Variables
-
-Variables store information.
-
-## Declaring a variable
-
-```bash
-NAME="Rahul"
-AGE=30
-```
-
-### Important
-
-Do **not** put spaces around `=`.
-
-Correct:
-
-```bash
-NAME="Rahul"
-```
-
-Incorrect:
-
-```bash
-NAME = "Rahul"
-```
-
----
-
-## Using a variable
-
-Use `$`:
-
-```bash
-NAME="Rahul"
-
-echo $NAME
-```
-
-Output:
-
-```text
-Rahul
-```
-
-You can also use:
-
-```bash
-echo "$NAME"
-```
-
----
-
-## `$VAR` vs `"$VAR"` vs `'$VAR'`
-
-This is very important.
-
-### `$VAR`
-
-Bash expands the variable:
-
-```bash
-NAME="Rahul"
-
-echo $NAME
-```
-
-Output:
-
-```text
-Rahul
-```
-
----
-
-### `"$VAR"`
-
-Double quotes also expand the variable:
-
-```bash
-NAME="Rahul Sharma"
-
-echo "$NAME"
-```
-
-Output:
-
-```text
-Rahul Sharma
-```
-
-**Recommended when using variables**, especially when values may contain spaces.
-
----
-
-### `'$VAR'`
-
-Single quotes prevent variable expansion:
-
-```bash
-NAME="Rahul"
-
-echo '$NAME'
-```
-
-Output:
-
-```text
-$NAME
-```
-
-### Remember
-
-```text
-"$VAR"   → variable is expanded
-'$VAR'   → variable is NOT expanded
-```
-
----
-
-## Example
-
-```bash
-#!/bin/bash
-
-NAME="Rahul Sharma"
-
-echo $NAME
-echo "$NAME"
-echo '$NAME'
-```
-
-Output:
-
-```text
-Rahul Sharma
-Rahul Sharma
-$NAME
-```
-
----
-
-# 5. Reading User Input — `read`
-
-The `read` command gets input from the user.
-
-Example:
-
-```bash
-#!/bin/bash
-
-echo "Enter your name:"
-read NAME
-
-echo "Hello $NAME"
-```
-
-Run:
-
-```text
-Enter your name:
-Rahul
-Hello Rahul
-```
-
----
-
-## `read -p`
-
-You can put the prompt directly in `read`:
-
-```bash
-read -p "Enter your name: " NAME
-
-echo "Hello $NAME"
-```
-
-Output:
 
 ```text
 Enter your name: Rahul
@@ -325,357 +142,303 @@ Hello Rahul
 
 ---
 
-## Reading multiple values
-
-```bash
-read -p "Enter your first and last name: " FIRST LAST
-
-echo "First name: $FIRST"
-echo "Last name: $LAST"
-```
-
----
-
-## Recommended form
-
-Use `-r` to prevent backslash interpretation:
-
-```bash
-read -r -p "Enter your name: " NAME
-```
-
----
-
-# 6. Command-Line Arguments
-
-Command-line arguments allow users to pass values to a script when starting it.
-
-Example script:
-
-```bash
-#!/bin/bash
-
-echo "Script name: $0"
-echo "First argument: $1"
-echo "Number of arguments: $#"
-```
+### 6. Command-Line Arguments
 
 Run:
-
-```bash
-./script.sh Rahul
-```
-
-Output:
-
-```text
-Script name: ./script.sh
-First argument: Rahul
-Number of arguments: 1
-```
-
----
-
-## `$0` — Script name
-
-```bash
-echo "$0"
-```
-
-Contains the name/path used to run the script.
-
-Example:
-
-```bash
-./script.sh Rahul
-```
-
-Then:
-
-```text
-$0 = ./script.sh
-```
-
----
-
-## `$1` — First argument
-
-```bash
-echo "$1"
-```
-
-Example:
-
-```bash
-./script.sh Rahul
-```
-
-Result:
-
-```text
-$1 = Rahul
-```
-
----
-
-## `$2` — Second argument
-
-```bash
-echo "$2"
-```
-
-Example:
 
 ```bash
 ./script.sh Rahul 30
 ```
 
-Then:
+Inside the script:
 
-```text
-$1 = Rahul
-$2 = 30
-```
-
-Similarly:
-
-```text
-$3 → Third argument
-$4 → Fourth argument
-...
-```
-
----
-
-# `$#` — Number of arguments
-
-`$#` tells you how many arguments were supplied.
+| Variable | Meaning                         |
+| -------- | ------------------------------- |
+| `$0`     | Script name                     |
+| `$1`     | First argument                  |
+| `$2`     | Second argument                 |
+| `$#`     | Number of arguments             |
+| `$@`     | All arguments                   |
+| `$?`     | Exit status of previous command |
 
 Example:
 
 ```bash
 #!/bin/bash
 
+echo "Script: $0"
+echo "Name: $1"
+echo "Age: $2"
 echo "Arguments: $#"
+echo "All args: $@"
 ```
 
 Run:
 
 ```bash
-./script.sh Rahul 30 Linux
+./script.sh Rahul 30
 ```
 
 Output:
 
 ```text
-Arguments: 3
+Script: ./script.sh
+Name: Rahul
+Age: 30
+Arguments: 2
+All args: Rahul 30
 ```
 
----
-
-# `$@` — All arguments
-
-`$@` represents all command-line arguments.
-
-Example:
-
-```bash
-#!/bin/bash
-
-echo "Arguments: $@"
-```
-
-Run:
-
-```bash
-./script.sh Rahul 30 Linux
-```
-
-Output:
-
-```text
-Arguments: Rahul 30 Linux
-```
-
-### Recommended usage
-
-Use:
-
-```bash
-"$@"
-```
-
-when passing arguments to another command or looping over them.
-
-Example:
-
-```bash
-for arg in "$@"
-do
-    echo "Argument: $arg"
-done
-```
-
-Run:
-
-```bash
-./script.sh Rahul 30 Linux
-```
-
-Output:
-
-```text
-Argument: Rahul
-Argument: 30
-Argument: Linux
-```
-
----
-
-# `$?` — Exit status of the last command
-
-`$?` contains the exit status of the **previous command**.
-
-Generally:
-
-```text
-0     → Success
-non-0 → Failure
-```
-
-Example:
+### `$?` Example
 
 ```bash
 ls /tmp
-
-echo "$?"
+echo $?
 ```
 
-If `ls` succeeds:
-
 ```text
-0
+0 → command successful
+non-zero → command failed
+```
+
+---
+
+# Task 2: Operators and Conditionals
+
+## 1. String Comparisons
+
+```bash
+name="Rahul"
+
+[ "$name" = "Rahul" ]
+[ "$name" != "Amit" ]
+[ -z "$name" ]
+[ -n "$name" ]
+```
+
+| Operator | Meaning             |
+| -------- | ------------------- |
+| `=`      | Equal               |
+| `!=`     | Not equal           |
+| `-z`     | String is empty     |
+| `-n`     | String is not empty |
+
+Example:
+
+```bash
+if [ "$name" = "Rahul" ]; then
+    echo "Correct"
+fi
+```
+
+---
+
+## 2. Integer Comparisons
+
+```bash
+a=10
+b=20
+```
+
+| Operator | Meaning               |
+| -------- | --------------------- |
+| `-eq`    | Equal                 |
+| `-ne`    | Not equal             |
+| `-lt`    | Less than             |
+| `-gt`    | Greater than          |
+| `-le`    | Less than or equal    |
+| `-ge`    | Greater than or equal |
+
+Example:
+
+```bash
+if [ "$a" -lt "$b" ]; then
+    echo "a is smaller"
+fi
+```
+
+**Remember:** Don't use `>` or `<` for integer comparison inside `[ ]`.
+
+---
+
+## 3. File Test Operators
+
+```bash
+[ -f "$file" ]
+```
+
+| Operator | Meaning                      |
+| -------- | ---------------------------- |
+| `-f`     | Regular file exists          |
+| `-d`     | Directory exists             |
+| `-e`     | File/directory exists        |
+| `-r`     | Readable                     |
+| `-w`     | Writable                     |
+| `-x`     | Executable                   |
+| `-s`     | File exists and is not empty |
+
+Example:
+
+```bash
+if [ -f "/etc/passwd" ]; then
+    echo "File exists"
+fi
+```
+
+---
+
+## 4. `if`, `elif`, `else`
+
+Syntax:
+
+```bash
+if [ condition ]; then
+    commands
+elif [ condition ]; then
+    commands
+else
+    commands
+fi
 ```
 
 Example:
 
 ```bash
-ls /does-not-exist
+age=20
 
-echo "$?"
-```
-
-Output might be:
-
-```text
-ls: cannot access '/does-not-exist': No such file or directory
-2
-```
-
-The non-zero value indicates failure.
-
----
-
-# Complete Example
-
-```bash
-#!/bin/bash
-
-# Display script information
-
-echo "Script name: $0"
-echo "First argument: ${1:-Not provided}"
-echo "Number of arguments: $#"
-
-echo
-
-# Read user input
-read -r -p "Enter your name: " NAME
-
-echo "Hello, $NAME"
-
-echo
-
-# Show all arguments
-echo "All arguments: $@"
-
-# Check command status
-ls /tmp
-
-echo "Last command exit status: $?"
-```
-
-Run:
-
-```bash
-chmod +x script.sh
-
-./script.sh Rahul Linux
-```
-
-Possible output:
-
-```text
-Script name: ./script.sh
-First argument: Rahul
-Number of arguments: 2
-
-Enter your name: Amit
-Hello, Amit
-
-All arguments: Rahul Linux
-Last command exit status: 0
+if [ "$age" -ge 18 ]; then
+    echo "Adult"
+elif [ "$age" -ge 13 ]; then
+    echo "Teenager"
+else
+    echo "Child"
+fi
 ```
 
 ---
 
-# Quick Reference
+## 5. Logical Operators
 
-| Syntax                 | Meaning                             |
-| ---------------------- | ----------------------------------- |
-| `#!/bin/bash`          | Use Bash to execute the script      |
-| `chmod +x script.sh`   | Give execute permission             |
-| `./script.sh`          | Execute script directly             |
-| `bash script.sh`       | Execute script using Bash           |
-| `# comment`            | Single-line comment                 |
-| `VAR="value"`          | Create/assign variable              |
-| `$VAR`                 | Expand variable                     |
-| `"$VAR"`               | Expand variable safely with quoting |
-| `'$VAR'`               | Don't expand variable               |
-| `read VAR`             | Read user input                     |
-| `read -r -p "..." VAR` | Prompt and read input               |
-| `$0`                   | Script name                         |
-| `$1`                   | First argument                      |
-| `$2`                   | Second argument                     |
-| `$#`                   | Number of arguments                 |
-| `$@`                   | All arguments                       |
-| `$?`                   | Exit status of previous command     |
+### AND — `&&`
+
+Run second command only if first succeeds:
+
+```bash
+mkdir test && echo "Directory created"
+```
+
+Inside condition:
+
+```bash
+if [ "$age" -ge 18 ] && [ "$age" -lt 60 ]; then
+    echo "Working age"
+fi
+```
+
+### OR — `||`
+
+Run second command if first fails:
+
+```bash
+ls /tmp || echo "Directory not found"
+```
+
+### NOT — `!`
+
+Reverse the condition:
+
+```bash
+if ! [ -f "$file" ]; then
+    echo "File does not exist"
+fi
+```
 
 ---
 
-## ⭐ Easy Memory Trick
+## 6. Case Statement
 
-```text
-$0  → Who am I?          → Script name
-$1  → First value        → First argument
-$2  → Second value       → Second argument
-$#  → How many?          → Number of arguments
-$@  → Give me all        → All arguments
-$?  → Did it work?       → Exit status
-```
+Useful when checking **multiple possible values**.
 
-### Most important Bash rule
-
-When using variables, prefer:
+Syntax:
 
 ```bash
-echo "$VAR"
+case "$variable" in
+    value1)
+        commands
+        ;;
+    value2)
+        commands
+        ;;
+    *)
+        default commands
+        ;;
+esac
 ```
 
-rather than:
+Example:
 
 ```bash
-echo $VAR
+read -p "Enter choice: " choice
+
+case "$choice" in
+    1)
+        echo "Start"
+        ;;
+    2)
+        echo "Stop"
+        ;;
+    3)
+        echo "Restart"
+        ;;
+    *)
+        echo "Invalid choice"
+        ;;
+esac
 ```
 
-because quoting protects values containing spaces and other special characters.
+### Pattern example
+
+```bash
+case "$file" in
+    *.log)
+        echo "Log file"
+        ;;
+    *.txt)
+        echo "Text file"
+        ;;
+    *)
+        echo "Unknown file"
+        ;;
+esac
+```
+
+---
+
+# Quick Memory Table
+
+| Topic                | Syntax          |   |   |
+| -------------------- | --------------- | - | - |
+| Shebang              | `#!/bin/bash`   |   |   |
+| Variable             | `name="Rahul"`  |   |   |
+| Use variable         | `"$name"`       |   |   |
+| Input                | `read name`     |   |   |
+| First argument       | `$1`            |   |   |
+| Script name          | `$0`            |   |   |
+| Argument count       | `$#`            |   |   |
+| All arguments        | `"$@"`          |   |   |
+| Previous exit status | `$?`            |   |   |
+| String equal         | `=`             |   |   |
+| String not equal     | `!=`            |   |   |
+| Empty string         | `-z`            |   |   |
+| Number equal         | `-eq`           |   |   |
+| Number greater       | `-gt`           |   |   |
+| File                 | `-f`            |   |   |
+| Directory            | `-d`            |   |   |
+| Readable             | `-r`            |   |   |
+| Writable             | `-w`            |   |   |
+| Executable           | `-x`            |   |   |
+| AND                  | `&&`            |   |   |
+| OR                   | `               |   | ` |
+| NOT                  | `!`             |   |   |
+| Conditional          | `if ... fi`     |   |   |
+| Multiple choices     | `case ... esac` |   |   |
