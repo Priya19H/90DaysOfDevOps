@@ -181,6 +181,15 @@ echo "3. Script finished"
 - `set -o pipefail` →
 
 ---
+```
+-e          If something goes wrong → STOP 🛑
+
+-u          If you use something unknown → STOP 👀
+
+pipefail    If something fails inside a pipeline → NOTICE IT 🚨
+```
+
+
 
 ### Task 4: Local Variables
 1. Create `local_demo.sh` with:
