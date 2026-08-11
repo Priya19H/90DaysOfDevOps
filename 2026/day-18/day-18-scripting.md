@@ -88,7 +88,7 @@ echo "$memory_result"
 3. Try a command that **fails** — what happens with `set -e`?
 4. Try a **piped command** where one part fails — what happens with `set -o pipefail`?
 
-**Document:** What does each flag do?
+**Document:** What does each flag do?                              
 2. `set -u` →
 ` Without set -u `
 ```bash
