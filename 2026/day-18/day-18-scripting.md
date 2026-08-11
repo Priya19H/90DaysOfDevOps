@@ -89,7 +89,57 @@ echo "$memory_result"
 4. Try a **piped command** where one part fails — what happens with `set -o pipefail`?
 
 **Document:** What does each flag do?
-- `set -e` →
+2. `set -u` →
+` Without set -u `
+```bash
+#!/bin/bash
+
+echo "1. Script started"
+
+ls /does-not-exist
+
+echo "2. Script is still running"
+
+echo "3. Script finished"
+```
+
+`Output`
+```
+1. Script started
+ls: cannot access '/does-not-exist': No such file or directory
+
+2. Script is still running
+3. Script finished
+
+```
+
+` With set -u `
+```bash
+#!/bin/bash
+set -u
+echo "1. Script started"
+
+ls /does-not-exist
+
+echo "2. Script is still running"
+
+echo "3. Script finished"
+```
+
+`Output`
+```
+1. Script started
+ls: cannot access '/does-not-exist': No such file or directory
+./demo.sh: line 7: P: unbound variable
+
+```
+
+
+
+
+
+
+------------------------------------
 - `set -u` →
 - `set -o pipefail` →
 
