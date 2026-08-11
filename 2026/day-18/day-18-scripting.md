@@ -433,42 +433,14 @@ Swap:           5795        1995        3800
 
 ```
 
-
-
-
-
-
 ---
 
-## Hints
-- Function syntax: `function_name() { ... }`
-- Local vars: `local MY_VAR="value"`
-- Strict mode: `set -euo pipefail` as first line after shebang
-- Pass args to functions: `greet "Shubham"` → access as `$1` inside
-- `$?` gives the exit code of last command
 
+
+- 3 key points i learned
+1. Functions → Break a Bash script into reusable blocks. Makes scripts cleaner, easier to maintain, and reusable.
+2. local variables → Keep function variables inside the function. Prevents variables from accidentally affecting other parts of the script.
+3. set -euo pipefail / pipefail → Makes scripts safer by detecting failures.
 ---
 
-## Documentation
 
-Create `day-18-scripting.md` with:
-- Each script's code and output
-- Explanation of `set -euo pipefail`
-- What you learned (3 key points)
-
----
-
-## Submission
-1. Add your scripts and `day-18-scripting.md` to `2026/day-18/`
-2. Commit and push to your fork
-
----
-
-## Learn in Public
-
-Share what you learned about shell functions and strict mode on LinkedIn.
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
-
-Happy Learning!
-**TrainWithShubham**
