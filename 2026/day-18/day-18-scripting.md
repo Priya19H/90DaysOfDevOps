@@ -246,13 +246,10 @@ false  |  echo "Hello"
 
 ------------------------------------
 
+```
+Use, set -euo pipefail to make Bash scripts safer and fail early instead of silently continuing with bad results.
+```
 
-
-
-
-
-
----
 ```
 -e          If something goes wrong → STOP 🛑
 
