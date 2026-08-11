@@ -266,10 +266,68 @@ pipefail    If something fails inside a pipeline → NOTICE IT 🚨
    - Show that `local` variables don't leak outside the function
    - Compare with a function that uses regular variables
 
+```bash
+#!/bin/bash
 
+# Function using local variables
+local_function() {
+    local name="Priya"
+    local experience=3
 
+    echo "Inside local_function:"
+    echo "Name = $name"
+    echo "Experience  = $experience"
+}
 
+# Function using regular variables
+regular_function() {
+    name="Anisha"
+    experience=4
 
+    echo "Inside regular_function:"
+    echo "Name = $name"
+    echo "Experience  = $experience"
+}
+
+echo "===== LOCAL VARIABLE TEST ====="
+
+local_function
+
+echo
+echo "Outside local_function:"
+echo "Name = ${name:-NOT SET}"
+echo "Age  = ${experience:-NOT SET}"
+
+echo
+echo "===== REGULAR VARIABLE TEST ====="
+
+regular_function
+
+echo
+echo "Outside regular_function:"
+echo "Name = $name"
+echo "Experience  = $experience"
+```
+` Output `
+```
+===== LOCAL VARIABLE TEST =====
+Inside local_function:
+Name = Priya
+Experience  = 3
+
+Outside local_function:
+Name = NOT SET
+Age  = NOT SET
+
+===== REGULAR VARIABLE TEST =====
+Inside regular_function:
+Name = Anisha
+Experience  = 4
+
+Outside regular_function:
+Name = Anisha
+Experience  = 4
+```
 
 ---
 
