@@ -28,6 +28,8 @@ You will:
 
 - Linux (RHEL/Fedora):   
 `sudo dnf install git -y`   
+
+- Validate Git installed or not using:     
 `git --version`
 
 2. Set up your Git identity — name and email
