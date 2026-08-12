@@ -43,14 +43,23 @@ Answer these in your `day-23-notes.md`:
 ### Task 2: Branching Commands — Hands-On
 In your `devops-git-practice` repo, perform the following:
 1. List all branches in your repo
-2. Create a new branch called `feature-1`
-3. Switch to `feature-1`
-4. Create a new branch and switch to it in a single command — call it `feature-2`
-5. Try using `git switch` to move between branches — how is it different from `git checkout`?
-6. Make a commit on `feature-1` that does **not** exist on `main`
-7. Switch back to `main` — verify that the commit from `feature-1` is not there
-8. Delete a branch you no longer need
-9. Add all branching commands to your `git-commands.md`
+
+   `git branch`
+
+   *Output*
+   `* master`
+
+3. Create a new branch called `feature-1`
+
+   `git branch feature-1`
+      
+4. Switch to `feature-1`
+5. Create a new branch and switch to it in a single command — call it `feature-2`
+6. Try using `git switch` to move between branches — how is it different from `git checkout`?
+7. Make a commit on `feature-1` that does **not** exist on `main`
+8. Switch back to `main` — verify that the commit from `feature-1` is not there
+9. Delete a branch you no longer need
+10. Add all branching commands to your `git-commands.md`
 
 ---
 
