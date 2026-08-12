@@ -224,10 +224,21 @@ Answer these questions in your own words (add them to a `day-22-notes.md` file):
 
 	 In short: Direct committing would force you to save everything at once. Staging lets you organize your changes into clean, meaningful updates.
 
-4. What information does `git log` show you?
+3. What information does `git log` show you?
+   - Commit Hash (SHA): A unique alphanumeric identifier (e.g., a1b2c3d4...) representing the snapshot.
+   - Author Details: The name and email address configured by the author.
+   - Date & Timestamp: Exact time zone and timestamp when the commit was created. 
+   - Commit Message: The descriptive summary explaining what changes were introduced.
+   - Refs & Pointers: Markers showing where HEAD, local branches (e.g., main), or remote tracking branches are currently pointing.
    
-6. What is the `.git/` folder and what happens if you delete it?
-7. What is the difference between a **working directory**, **staging area**, and **repository**?
+4. What is the `.git/` folder and what happens if you delete it?
+   - The .git/ folder is the Git repository. It holds your object database, configuration settings, hook scripts, logs, and branch references (HEAD, refs/heads/).
+   - If you delete .git/: You destroy the entire version control history of the project. All past commits, branches, stashes, and tags are permanently deleted.
+   
+5. What is the difference between a **working directory**, **staging area**, and **repository**?
+  - Working Directory: Where you make the changes.
+  - Staging Area: Where you prepare the changes.
+  - Repository: Where you permanently save the changes.
 
 ---
 
