@@ -1,11 +1,7 @@
 
 # Day 22 – Introduction to Git: Your First Repository
 
-## Task
 
-Today marks the beginning of your Git journey. Git is the backbone of modern DevOps — every tool, pipeline, and workflow revolves around version control. Before diving into advanced concepts, you need to get comfortable with the basics by doing.
-
-You will:
 - Understand what Git is and why it matters
 - Set up your first Git repository from scratch
 - Start building a living document of Git commands
@@ -52,9 +48,17 @@ git config user.email
 
 ### Task 2: Create Your Git Project
 1. Create a new folder called `devops-git-practice`
+```
+mkdir devops-git-practice
+cd devops-git-practice
+```
 2. Initialize it as a Git repository
-3. Check the status — read and understand what Git is telling you
-4. Explore the hidden `.git/` directory — look at what's inside
+` git init `
+
+4. Check the status — read and understand what Git is telling you
+
+   
+6. Explore the hidden `.git/` directory — look at what's inside
 
 ---
 
