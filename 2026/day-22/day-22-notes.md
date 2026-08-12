@@ -171,19 +171,63 @@ git config user.email
   
 3. Stage and commit again with a different, descriptive message
 
+  ```
+  git add git-commands.md
+  git commit -m "docs: add staging and committing section to reference" git-commands.md
+  ```
 
-5. Repeat this process at least **3 times** so you have multiple commits in your history
-6. View the full history in a compact format
+4. Repeat this process at least **3 times** so you have multiple commits in your history
 
+```
+cat << 'EOF' >> git-commands.md
+	> File Content need to be added
+	> EOF
+
+git add git-commands.md
+git commit -m "Data added" git-commands.md
+```
+
+
+5. View the full history in a compact format
+
+` git log --oneline --graph --decorate --all `
+
+*Output*
+```
+* f6c1218 (HEAD -> master) Formating of file
+* c8a0804  Added git revert command
+* 8ba50af  Added git reset command
+* 59cc622  Added git restore command
+* 91805c4 docs: add staging and committing section to reference
+* 24debac docs: add initial git command reference guide
+```
 ---
 
 ### Task 6: Understand the Git Workflow
 Answer these questions in your own words (add them to a `day-22-notes.md` file):
 1. What is the difference between `git add` and `git commit`?
+   - git add copies modifications from your Working Directory to the Staging Area (Index). It prepares specific changes for a snapshot without writing anything to the commit history.
+
+     `*Working directory -> Staging area*`
+   - git commit takes the exact snapshot currently inside the Staging Area and permanently writes it to the local repository database (.git/), assigning it a unique SHA hash and commit message.
+
+     `*Staging area -> Local Repository*`
+
 2. What does the **staging area** do? Why doesn't Git just commit directly?
-3. What information does `git log` show you?
-4. What is the `.git/` folder and what happens if you delete it?
-5. What is the difference between a **working directory**, **staging area**, and **repository**?
+   - The staging area is a drafting table. It holds only the specific changes you're ready to save, before making them permanent.
+     
+   *- Why not commit directly?*
+   
+     *1. Selective Saving:* If you edited 5 files today, but only 2 of them are ready, you can stage and commit just those 2. The other 3 stay as work-in-progress.
+
+     *2. Clean History:* It gives you a final chance to review your work (git diff --staged) so you can group related changes together with a clear message, rather than saving a messy pile of everything at once.
+
+	 In short: Direct committing would force you to save everything at once. Staging lets you organize your changes into clean, meaningful updates.
+
+4. What information does `git log` show you?
+   
+6. What is the `.git/` folder and what happens if you delete it?
+7. What is the difference between a **working directory**, **staging area**, and **repository**?
 
 ---
 
