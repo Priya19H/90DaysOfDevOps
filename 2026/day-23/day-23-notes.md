@@ -107,7 +107,10 @@ In your `devops-git-practice` repo, perform the following:
     `git branch -d feature-2`
 
 12. Add all branching commands to your `git-commands.md`
-    
+    ```
+    git add git-commands.md
+    git commit -m "New commands added" git-commands.md
+    ```
 
 ---
 
