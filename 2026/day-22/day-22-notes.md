@@ -1,18 +1,6 @@
 
 # Day 22 – Introduction to Git: Your First Repository
 
-
-- Understand what Git is and why it matters
-- Set up your first Git repository from scratch
-- Start building a living document of Git commands
-
----
-
-## Expected Output
-- A local Git repository with a clean commit history
-- A file called `git-commands.md` that you will keep updating in future days
-- A file called `day-22-notes.md` with your answers
-
 ---
 
 ## Challenge Tasks
@@ -242,32 +230,14 @@ Answer these questions in your own words (add them to a `day-22-notes.md` file):
 
 ---
 
+<img width="727" height="168" alt="image" src="https://github.com/user-attachments/assets/56ce06e2-5f22-4895-bda1-06920147915c" />
+
 ## Ongoing Task
 
 **Keep updating `git-commands.md` every day** as you learn new Git commands in the upcoming days. This will become your personal Git reference. Maintain a clean commit history — one commit per update with a clear message.
 
 ---
 
-## Hints
-- All you need today are about 8-10 Git commands — Google them, try them, break things
-- Read what `git status` tells you — it's your best friend
-- Use `man git-<command>` or `git <command> --help` to explore
-
----
-
-## Submission
-1. Share a screenshot of your `git log --oneline` output showing multiple commits
-2. Add your `day-22-notes.md` to `2026/day-22/`
-3. Commit and push to your fork
-4. Add your submission for Community Builder of the week on discord
-
----
-
-## Learn in Public
-
-Share your first Git repo and commit history on LinkedIn.
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
 
 Happy Learning!
 **TrainWithShubham**
