@@ -116,10 +116,24 @@ In your `devops-git-practice` repo, perform the following:
 
 ### Task 3: Push to GitHub
 1. Create a **new repository** on GitHub (do NOT initialize it with a README)
+
+   **Created new repo on Github devops-git-practice**
+
 2. Connect your local `devops-git-practice` repo to the GitHub remote
+
+   `git remote add origin git@github.com:ProfileName/devops-git-practice.git`
+
 3. Push your `main` branch to GitHub
+
+   `git push -u origin master`
+
 4. Push `feature-1` branch to GitHub
+
+   `git push -u origin feature-1`
+
 5. Verify both branches are visible on GitHub
+
+
 6. Answer in your notes: What is the difference between `origin` and `upstream`?
 
 ---
