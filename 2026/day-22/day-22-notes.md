@@ -97,11 +97,13 @@ git config user.email
 1. Stage your file
 
    *Move changes to the Staging Area (Index)*
+   
    ` git add git-commands.md `
    
-2. Check what's staged
+3. Check what's staged
 
    *Inspect what will be included in the commit*
+
    `git status`
 
    *Output*
@@ -116,9 +118,10 @@ git config user.email
 
    ```
    
-3. Commit with a meaningful message
+5. Commit with a meaningful message
 
    *Create a snapshot in the Git database*
+
    ` git commit -m "docs: add initial git command reference guide" `
 
    *Output*
@@ -128,9 +131,10 @@ git config user.email
     create mode 100644 git-commands.md
    ```
    
-4. View your commit history
+7. View your commit history
 
    *Inspect the repository log*
+
    `git log`
 
    *Output*
@@ -145,10 +149,25 @@ git config user.email
 
 ### Task 5: Make More Changes and Build History
 1. Edit `git-commands.md` — add more commands as you discover them
+
+	Way to add text into file without going into that file.
+   ```
+   cat << 'EOF' >> git-commands.md
+	> * **`git add`**
+  	* **Description:** Stages changes in specified files to be included in the next commit.
+  	* **Example:** `git add git-commands.md`
+
+	* **`git commit`**
+  	* **Description:** Records staged snapshots permanently into the repository history.
+  	* **Example:** `git commit -m "docs: add new reference guide"`EOF
+	> EOF
+   ```
+   
 2. Check what changed since your last commit
-3. Stage and commit again with a different, descriptive message
-4. Repeat this process at least **3 times** so you have multiple commits in your history
-5. View the full history in a compact format
+   
+4. Stage and commit again with a different, descriptive message
+5. Repeat this process at least **3 times** so you have multiple commits in your history
+6. View the full history in a compact format
 
 ---
 
