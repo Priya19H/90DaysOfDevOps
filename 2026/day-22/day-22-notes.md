@@ -48,18 +48,37 @@ git config user.email
 
 ### Task 2: Create Your Git Project
 1. Create a new folder called `devops-git-practice`
-```
-mkdir devops-git-practice
-cd devops-git-practice
-```
+   ```
+   mkdir devops-git-practice
+   cd devops-git-practice
+   ```
 2. Initialize it as a Git repository
-` git init `
 
-4. Check the status — read and understand what Git is telling you
+   ` git init `
 
+3. Check the status — read and understand what Git is telling you :
+
+   ` git status `
+
+- What Git is telling:
+    1. On branch main (or master): Indicates the current local branch you are working on.   
+    2. No commits yet: Confirms the repository history is completely empty.
+    3. Nothing to commit: Your working directory is completely clean and matches the staged area
+                     (no untracked or modified files present).
    
-6. Explore the hidden `.git/` directory — look at what's inside
+4. Explore the hidden `.git/` directory — look at what's inside
+   
+   ` ls -la .git/ `
 
+   *Key components inside .git/:*
+   - HEAD: Points to the currently checked-out branch reference.
+   - config: Repository-specific configuration settings.
+   - description: Used primarily by GitWeb (can be ignored for local workflows).
+   - hooks/: Directory containing client-side or server-side executable scripts triggered by Git actions (e.g., pre-commit checks).
+   - info/: Holds additional information, such as the exclude file for untracked files you don't want in .gitignore.
+   - objects/: The object database holding all commits, trees (directories), and blobs (file contents).
+   - refs/: Stores pointers to commit objects (branches in refs/heads/, tags in refs/tags/).
+  
 ---
 
 ### Task 3: Create Your Git Commands Reference
