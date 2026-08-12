@@ -31,7 +31,12 @@ Answer these in your `day-23-notes.md`:
    HEAD is a special pointer that references your current active state or position in the repository.
 
 4. What happens to your files when you switch branches?
-   
+
+   1. *Committed files:* Your tracked files change to match the exact content and version saved in the new branch.
+   2. *Missing files:* Files that existed on your old branch but do not exist on the new branch are deleted from your working folder.
+   3. *New branch files:* Files unique to the new branch are added or extracted into your working folder.
+   4. *Uncommitted (unstaged/staged) clean changes:* If your local changes do not touch files that differ on the target branch, Git carries those modified files right over to the new branch.
+   5. *Uncommitted conflicting changes:* If your local changes conflict with versions on the target branch, modern Git commands (git switch or git checkout) abort the switch to prevent data loss.
 
 ---
 
