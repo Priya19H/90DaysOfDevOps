@@ -95,10 +95,52 @@ git config user.email
 
 ### Task 4: Stage and Commit
 1. Stage your file
+
+   *Move changes to the Staging Area (Index)*
+   ` git add git-commands.md `
+   
 2. Check what's staged
+
+   *Inspect what will be included in the commit*
+   `git status`
+
+   *Output*
+   ```
+   On branch master
+
+   No commits yet
+
+   Changes to be committed:
+     (use "git rm --cached <file>..." to unstage)
+	   new file:   git-commands.md
+
+   ```
+   
 3. Commit with a meaningful message
+
+   *Create a snapshot in the Git database*
+   ` git commit -m "docs: add initial git command reference guide" `
+
+   *Output*
+   ```
+   [master (root-commit) 24debac] docs: add initial git command reference guide
+    1 file changed, 33 insertions(+)
+    create mode 100644 git-commands.md
+   ```
+   
 4. View your commit history
 
+   *Inspect the repository log*
+   `git log`
+
+   *Output*
+   ```
+   commit 24debac230628f076f3719e15d46579a827c005d (HEAD -> master)
+   Author: Priya19H <priyanka.a.hingade@gmail.com>
+   Date:   Wed Aug 12 12:24:19 2026 +0530
+
+   docs: add initial git command reference guide
+   ```
 ---
 
 ### Task 5: Make More Changes and Build History
