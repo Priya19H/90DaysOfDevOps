@@ -77,12 +77,37 @@ In your `devops-git-practice` repo, perform the following:
    `Switched to a new branch 'feature-2'`
 
 8. Try using `git switch` to move between branches — how is it different from `git checkout`?
+  - git checkout performed two completely different tasks depending on the arguments provided:
+    1. Managing branches (switching to an existing branch or creating a new one).
+    2. Discarding local changes (overwriting a file in your directory with a version from a previous commit).
+  - To eliminate confusion and prevent accidental file loss, Git introduced two dedicated commands:
+    1. git switch: Dedicated only to navigating and creating branches (git switch <branch>, git switch -c <new-branch>).
+    2. git restore: Dedicated only to discarding changes or unstaging files (git restore <file>).
+   
+         
+     <img width="691" height="316" alt="image" src="https://github.com/user-attachments/assets/56900669-79fb-42f7-967e-74641399e9bb" />
 
 
 9. Make a commit on `feature-1` that does **not** exist on `main`
-10. Switch back to `main` — verify that the commit from `feature-1` is not there
+   ```
+   git checkout feature-1
+   vim demo.txt
+   git add demo.txt
+   git commit -m "demo.txt added" demo.txt
+   ```
+   
+10. Switch back to `master` — verify that the commit from `feature-1` is not there
+  
+   `git switch master`
+   The commit from `feature-1` is not there in `master`
+
+   <img width="691" height="395" alt="image" src="https://github.com/user-attachments/assets/0a0eda6f-bc1e-44df-bdc6-f6fb4fe44485" />
+
 11. Delete a branch you no longer need
+    `git branch -d feature-2`
+
 12. Add all branching commands to your `git-commands.md`
+    
 
 ---
 
