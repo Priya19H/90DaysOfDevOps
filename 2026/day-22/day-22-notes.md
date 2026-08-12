@@ -118,7 +118,7 @@ git config user.email
 
    ```
    
-5. Commit with a meaningful message
+4. Commit with a meaningful message
 
    *Create a snapshot in the Git database*
 
@@ -131,7 +131,7 @@ git config user.email
     create mode 100644 git-commands.md
    ```
    
-7. View your commit history
+5. View your commit history
 
    *Inspect the repository log*
 
@@ -164,8 +164,14 @@ git config user.email
    ```
    
 2. Check what changed since your last commit
-   
-4. Stage and commit again with a different, descriptive message
+	
+	*Check the unstaged diff to verify your additions:*
+
+   ` git diff `
+  
+3. Stage and commit again with a different, descriptive message
+
+
 5. Repeat this process at least **3 times** so you have multiple commits in your history
 6. View the full history in a compact format
 
