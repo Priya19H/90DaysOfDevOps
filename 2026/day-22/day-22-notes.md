@@ -17,8 +17,7 @@
 `git --version`
 
 2. Set up your Git identity — name and email
-- Applies globally to all your repositories.
-Configure the global username and email address attached to your commits:
+   *Applies globally to all your repositories. Configure the global username and email address attached to your commits:*
 ```
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
