@@ -33,8 +33,21 @@ You will:
 `git --version`
 
 2. Set up your Git identity — name and email
-3. Verify your configuration
-
+- Applies globally to all your repositories.
+Configure the global username and email address attached to your commits:
+```
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+4. Verify your configuration
+```
+git config --list --global
+```
+OR
+```
+git config user.name
+git config user.email
+```
 ---
 
 ### Task 2: Create Your Git Project
