@@ -133,8 +133,16 @@ In your `devops-git-practice` repo, perform the following:
 
 5. Verify both branches are visible on GitHub
 
+   <img width="376" height="387" alt="image" src="https://github.com/user-attachments/assets/fbf3091b-30b5-4c53-9699-af9accf5404e" />
+
 
 6. Answer in your notes: What is the difference between `origin` and `upstream`?
+   - Upstream = This is the main project owned by the original author. Lots of people build on it, but you don't have permission to write or draw directly on it.
+
+   - Origin =  You make a copy (a fork) of the castle and put it on your own shelf. This copy belongs to you. You can push changes, draw on it, or build new towers whenever you want.
+  
+     <img width="689" height="452" alt="image" src="https://github.com/user-attachments/assets/3be75f60-44e9-41be-bc45-df90eea95e9b" />
+
 
 ---
 
@@ -169,6 +177,12 @@ In your `devops-git-practice` repo, perform the following:
 3. Push to your fork
 
 ---
+
+
+<img width="689" height="452" alt="image" src="https://github.com/user-attachments/assets/cbd3512e-a0a6-42a6-91d8-b6c6817c4d7e" />
+------
+
+
 
 ## Learn in Public
 
