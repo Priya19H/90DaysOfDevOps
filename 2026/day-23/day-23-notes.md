@@ -1,16 +1,4 @@
-# Day 23 – Git Branching & Working with GitHub (PENDING FROM TASK 3)
-
-## Task
-
-Now that you know how to create repos, stage, and commit — it's time to learn the most powerful concept in Git: **branching**. Branches let you work on features, fixes, and experiments in isolation without breaking your main code. You'll also push your work to GitHub for the first time.
-
----
-
-## Expected Output
-- A markdown file: `day-23-notes.md` with your answers
-- Continue updating `git-commands.md` in your `devops-git-practice` repo
-- Your practice repo pushed to GitHub
-
+# Day 23 – Git Branching & Working with GitHub 
 ---
 
 ## Challenge Tasks
@@ -235,11 +223,3 @@ In your `devops-git-practice` repo, perform the following:
 
 
 
-## Learn in Public
-
-Share your branching workflow and first GitHub push on LinkedIn.
-
-`#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
-
-Happy Learning!
-**TrainWithShubham**
