@@ -148,18 +148,31 @@ In your `devops-git-practice` repo, perform the following:
 
 ### Task 4: Pull from GitHub
 1. Make a change to a file **directly on GitHub** (use the GitHub editor)
-`On Github:`
-<img width="689" height="276" alt="image" src="https://github.com/user-attachments/assets/6e684dce-2a69-4751-9648-0d2b65f6fdbb" />
+
+   `On Github:`
+   
+   <img width="689" height="276" alt="image" src="https://github.com/user-attachments/assets/6e684dce-2a69-4751-9648-0d2b65f6fdbb" />
 
 
-`On Local Git:`
-<img width="689" height="276" alt="image" src="https://github.com/user-attachments/assets/8d6ef9b4-c7a8-41db-9918-3b181e9d060b" />
+   `On Local Git:`
+   
+    <img width="689" height="276" alt="image" src="https://github.com/user-attachments/assets/8d6ef9b4-c7a8-41db-9918-3b181e9d060b" />
 
 
-2. Pull that change to your local repo
+3. Pull that change to your local repo
+
+   `git pull origin feature-1`
+
+   <img width="802" height="409" alt="image" src="https://github.com/user-attachments/assets/67b7817a-4828-485f-9bd4-ae25ff3f36b8" />
 
 
-3. Answer in your notes: What is the difference between `git fetch` and `git pull`?
+4. What is the difference between `git fetch` and `git pull`?
+   - git fetch downloads the latest changes from GitHub into the background, but does not touch your local files. It is completely safe and lets you inspect changes before merging.
+
+   - git pull downloads the changes AND automatically merges them directly into your local files in one step (git fetch + git merge).
+
+
+
 
 ---
 
@@ -168,8 +181,47 @@ In your `devops-git-practice` repo, perform the following:
 2. **Fork** the same repository on GitHub, then clone your fork
 3. Answer in your notes:
    - What is the difference between clone and fork?
+       - Fork (Server-side): Creates a personal copy of someone else's GitHub repository under your own GitHub account. It exists entirely in the cloud.
+
+       - Clone (Local): Downloads a repository from a remote server (like GitHub) directly onto your local computer's hard drive.
+ 
+
    - When would you clone vs fork?
+      - Use Fork when:
+        1. You want to contribute to an open-source project where you do not have direct push/write permissions.
+        2. You want to use someone else's repository as a starting point for your own independent project.
+
+      - Use Clone when:
+        1. You want to start working on a project locally on your machine.
+        2. You are collaborating on a repository where you are already a member or owner and have direct write access.
+
+
    - After forking, how do you keep your fork in sync with the original repo?
+       - Method 1: GitHub Web Interface (Easiest)
+                  i. Go to your forked repository on GitHub.
+                  ii. Click the Sync fork button located near the top.
+                  iii. Select Update branch.
+
+       - Method 2: Git Terminal Commands
+               i. Add the original repository as an upstream remote (run once)
+               ii. Fetch updates from the original repository
+               iii. Merge the main branch of upstream into your local branch
+               iv. Push the synced changes to your personal GitHub fork (origin)
+
+               ```
+                  git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPO.git
+                  git fetch upstream
+                  git checkout main
+                  git merge upstream/main
+                  git push origin main
+               ```
+
+
+
+     
+  
+   <img width="536" height="456" alt="image" src="https://github.com/user-attachments/assets/b4146ecf-0fd2-4046-be3e-d1d0f4cac6e9" />
+
 
 ---
 
