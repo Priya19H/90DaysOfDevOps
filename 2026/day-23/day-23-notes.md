@@ -198,14 +198,14 @@ In your `devops-git-practice` repo, perform the following:
 
    - After forking, how do you keep your fork in sync with the original repo?
        - Method 1: GitHub Web Interface (Easiest)
-                  1. Go to your forked repository on GitHub.
-                  2. Click the Sync fork button located near the top.
-                  3. Select Update branch.
+         1. Go to your forked repository on GitHub.
+         2. Click the Sync fork button located near the top.
+         3. Select Update branch.
 
        - Method 2: Git Terminal Commands
-               1. Add the original repository as an upstream remote (run once)
-               2. Fetch updates from the original repository
-               3. Merge the main branch of upstream into your local branch
+         1. Add the original repository as an upstream remote (run once)
+         2. Fetch updates from the original repository
+         3. Merge the main branch of upstream into your local branch
                iv. Push the synced changes to your personal GitHub fork (origin)
 
                ```
