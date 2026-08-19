@@ -216,27 +216,16 @@ In your `devops-git-practice` repo, perform the following:
                   git push origin main
                ```
 
-
-
-     
-  
-   <img width="536" height="456" alt="image" src="https://github.com/user-attachments/assets/b4146ecf-0fd2-4046-be3e-d1d0f4cac6e9" />
+         <img width="536" height="456" alt="image" src="https://github.com/user-attachments/assets/b4146ecf-0fd2-4046-be3e-d1d0f4cac6e9" />
 
 
 ---
 
-## Hints
+## Key-Points
 - When you create a branch, it starts from the commit you're currently on
 - `git switch` is the modern alternative to `git checkout` for switching branches
 - To push a new branch: `git push -u origin <branch-name>`
 - A fork is a GitHub concept, not a Git concept
-
----
-
-## Submission
-1. Add your `day-23-notes.md` to `2026/day-23/`
-2. Update `git-commands.md` with all new commands and commit
-3. Push to your fork
 
 ---
 
