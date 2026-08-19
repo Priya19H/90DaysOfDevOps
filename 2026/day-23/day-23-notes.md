@@ -148,7 +148,17 @@ In your `devops-git-practice` repo, perform the following:
 
 ### Task 4: Pull from GitHub
 1. Make a change to a file **directly on GitHub** (use the GitHub editor)
+`On Github:`
+<img width="689" height="276" alt="image" src="https://github.com/user-attachments/assets/6e684dce-2a69-4751-9648-0d2b65f6fdbb" />
+
+
+`On Local Git:`
+<img width="689" height="276" alt="image" src="https://github.com/user-attachments/assets/8d6ef9b4-c7a8-41db-9918-3b181e9d060b" />
+
+
 2. Pull that change to your local repo
+
+
 3. Answer in your notes: What is the difference between `git fetch` and `git pull`?
 
 ---
