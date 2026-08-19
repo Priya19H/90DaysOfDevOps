@@ -33,28 +33,42 @@ ecause only see two original commit messages sitting right at the top of main, i
 
 4. Now create another branch `feature-signup`, add commits to it — but also add a commit to `main` before merging
 ```
-git checkout -b feature-signup            //Create and checkout new branch
-vim new-branch-feature-signup.txt        //Create new file in new branch
-git add new-branch-feature-signup.txt    // Add file to staged area
+git checkout -b feature-signup                                //Create and checkout new branch
+vim new-branch-feature-signup.txt                             //Create new file in new branch
+git add new-branch-feature-signup.txt                         // Add file to staged area
 git commit -m "New branch feature-signup added" new-branch-feature-signup.txt    //Commit file to local repo
-vim new-branch-feature-signup.txt    //Update file
-git add new-branch-feature-signup.txt  // Add file to staged area
+vim new-branch-feature-signup.txt                      //Update file
+git add new-branch-feature-signup.txt                 // Add file to staged area
 git commit -m "File feature-signup Updated" new-branch-feature-signup.txt   //Commit updated file to local repo
 ```
 ```
-git checkout master        // Checkout to master
-vim master-branch-file.txt  // Create new file to master
-git add master-branch-file.txt //Add file to staged area
-git commit -m "New file added in master branch" master-branch-file.txt // Commit file to local repo 
-git merge feature-signup   // Merge feature-signup with master
+git checkout master                             // Checkout to master
+vim master-branch-file.txt                    // Create new file to master
+git add master-branch-file.txt                //Add file to staged area
+git commit -m "New file added in master branch" master-branch-file.txt       // Commit file to local repo 
 ```
 
 5. Merge `feature-signup` into `main` — what happens this time?
+`git merge feature-signup   // Merge feature-signup with master`
+
 6. Answer in your notes:
    - What is a fast-forward merge?
-   - When does Git create a merge commit instead?
-   - What is a merge conflict? (try creating one intentionally by editing the same line in both branches)
+      1. A fast-forward merge occurs when you merge a feature branch into a base branch (like main or master), and no new commits were made to the base branch while you were working on the feature branch.
+      2. Because the base branch hasn't moved, Git doesn't need to combine anything. It simply moves ("fast-forwards") the main pointer forward to the tip of your feature branch. No extra commit is created.
 
+   - When does Git create a merge commit instead?
+      Git creates a merge commit (also known as a 3-way merge) when the base branch has moved forward with new commits after you originally branched off.
+
+   ```
+    Fast-Forward:  A ── B ── C (main, feature)
+
+    Merge Commit:  A ── B ─────── D (main)
+                     \       /
+                      C ──── E (feature)  <-- Merge Commit "D" created
+   ```
+
+   - What is a merge conflict? (try creating one intentionally by editing the same line in both branches)
+      A merge conflict happens when Git cannot automatically merge two branches because the same line in the same file was edited differently in both branches. Git pauses the merge and asks you to manually choose which change to keep.
 ---
 
 ### Task 2: Git Rebase — Hands-On
