@@ -75,12 +75,32 @@ git commit -m "New file added in master branch" master-branch-file.txt       // 
 
 <img width="751" height="108" alt="image" src="https://github.com/user-attachments/assets/140c3bda-d86e-41cf-a74d-9d0a3cb66784" />
 
+<img width="711" height="140" alt="image" src="https://github.com/user-attachments/assets/a7024d30-586d-4223-a949-52422750959b" />
 
 ---
 
 ### Task 2: Git Rebase — Hands-On
 1. Create a branch `feature-dashboard` from `main`, add 2-3 commits
+```
+git checkout -b feature-dashboard
+vim dash-demo.txt
+git add dash-demo.txt
+git commit -m "dash-demo file added" dash-demo.txt
+vim dash-demo.txt
+git add dash-demo.txt
+git commit -m "dash-demo file updated" dash-demo.txt
+```
+
+
 2. While on `main`, add a new commit (so `main` moves ahead)
+```
+git checkout master 
+vim rebase-demo.txt
+git add rebase-demo.txt
+git commit -m "rebase-demo added" rebase-demo.txt
+```
+
+
 3. Switch to `feature-dashboard` and rebase it onto `main`
 4. Observe your `git log --oneline --graph --all` — how does the history look compared to a merge?
 5. Answer in your notes:
