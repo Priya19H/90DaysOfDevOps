@@ -70,12 +70,10 @@ git commit -m "New file added in master branch" master-branch-file.txt       // 
    - What is a merge conflict? (try creating one intentionally by editing the same line in both branches)
       A merge conflict happens when Git cannot automatically merge two branches because the same line in the same file was edited differently in both branches. Git pauses the merge and asks you to manually choose which change to keep.
 
-
-<Hands on PENDING>
-
+<img width="751" height="103" alt="image" src="https://github.com/user-attachments/assets/0d5c544f-a0ea-43a0-8f2e-7ce3d0979410" />
 
 
-
+<img width="751" height="108" alt="image" src="https://github.com/user-attachments/assets/140c3bda-d86e-41cf-a74d-9d0a3cb66784" />
 
 
 ---
